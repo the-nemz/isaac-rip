@@ -1,12 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './default.scss';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Main extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  renderFadeWrap(content) {
+    return (
+      <ReactCSSTransitionGroup
+          transitionName="FadeAnim"
+          transitionAppear={true}
+          transitionAppearTimeout={400}
+          transitionEnter={true}
+          transitionEnterTimeout={400}
+          transitionLeave={true}
+          transitionLeaveTimeout={400}>
+        {content}
+      </ReactCSSTransitionGroup>
+    );
+  }
+
+  render() {
+
+    return (
+      <div className="Main">
+        Main
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Main />, document.getElementById('root'));

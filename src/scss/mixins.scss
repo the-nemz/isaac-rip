@@ -1,0 +1,20 @@
+@mixin Link
+{
+  text-decoration: none;
+
+  @include hoverActive
+  {
+    text-decoration: underline;
+  }
+}
+
+.Link
+{
+  @include Link;
+}
+
+@mixin anti-aliased
+{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
