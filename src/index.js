@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import 'focus-visible/dist/focus-visible.min.js';
+
 import './default.scss';
 
 class Main extends React.Component {
@@ -30,7 +32,7 @@ class Main extends React.Component {
 
     return (
       <div className="Main">
-        Main
+        Isaac RIP
       </div>
     );
   }
