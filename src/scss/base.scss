@@ -112,6 +112,7 @@ section
 body
 {
   @include anti-aliased;
+  background-color: $gray-dark;
   line-height: normal;
   display: flex;
   flex-direction: column;

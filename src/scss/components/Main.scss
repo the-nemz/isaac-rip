@@ -1,25 +1,9 @@
 .Main
 {
-  height: 100vh;
-  width: 100vw;
-  background-color: $gray-dark;
+  min-height: 100vh;
+  padding-top: $gutter;
+  padding-bottom: $gutter;
   color: $white;
-  display: flex;
-
-  &-left,
-  &-right
-  {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    & > span
-    {
-      // for animation spans
-      width: 100%;
-    }
-  }
 
   &-info
   {
@@ -28,7 +12,13 @@
 
   &-name
   {
-    font-size: 32px;
+    font-size: 36px;
+  }
+
+  &-description
+  {
+    margin-top: $gutter/2;
+    font-size: 24px;
   }
 
   &-links
@@ -47,10 +37,111 @@
     padding-left: $gutter;
   }
 
+  &-content
+  {
+    display: flex;
+    margin-top: $gutter-mini*2;
+
+    @include bplte(xs)
+    {
+      flex-direction: column;
+    }
+  }
+
+  &-col
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    &--left
+    {
+      flex: 1;
+    }
+
+    &--right
+    {
+      flex: 2;
+    }
+
+    & > span
+    {
+      // for animation spans
+      width: 100%;
+    }
+  }
+
   &-image
   {
     width: 100%;
     border-radius: $gutter;
+  }
+
+  &-res
+  {
+    @include bplte(xs)
+    {
+      margin-top: $gutter;
+    }
+  }
+
+  &-resLine
+  {
+    &:not(:first-child)
+    {
+      margin-top: $gutter/2;
+    }
+  }
+
+  &-projects
+  {
     margin-top: $gutter;
+    border-top: $border-thin;
+    padding-top: $gutter;
+  }
+
+  &-projectsHeading
+  {
+    font-size: 24px;
+  }
+
+  &-project
+  {
+    margin-top: $gutter/2;
+
+    @include bpgte(md)
+    {
+      width: 50%;
+    }
+  }
+
+  &-projectImg
+  {
+    margin-top: $gutter/2;
+    width: 100px;
+  }
+
+  &-projectLinks
+  {
+    margin-top: $gutter-mini/2;
+  }
+
+  &-projectTitle
+  {
+    font-size: 20px;
+  }
+
+  &-projectSource
+  {
+    margin-left: $gutter-mini;
+    border-left: $border-default;
+    padding-left: $gutter-mini;
+  }
+
+  &-projectDesc
+  {
+    margin-top: $gutter-mini/2;
   }
 }

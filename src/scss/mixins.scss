@@ -13,8 +13,29 @@
   @include Link;
 }
 
-@mixin anti-aliased
+@mixin Container
 {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @include bpgte(sm)
+  {
+    width: 768px;
+  }
+
+  @include bpgte(md)
+  {
+    width: 992px;
+  }
+
+  @include bpgte(lg)
+  {
+    width: 1170px;
+  }
+}
+
+.Container
+{
+  @include Container;
 }

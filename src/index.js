@@ -6,6 +6,7 @@ import 'focus-visible/dist/focus-visible.min.js';
 
 import './default.scss';
 import glasses from './assets/glasses.jpg';
+import metrodreamin from './assets/metrodreamin.svg';
 
 class Main extends React.Component {
 
@@ -13,7 +14,9 @@ class Main extends React.Component {
     super(props);
     this.state = {
       showInfo: false,
-      showImage: false
+      showImage: false,
+      showRes: false,
+      showProjects: false
     };
   }
 
@@ -29,6 +32,18 @@ class Main extends React.Component {
         showImage: true
       })
     }, 1000);
+
+    setTimeout(() => {
+      this.setState({
+        showRes: true
+      })
+    }, 1500);
+
+    setTimeout(() => {
+      this.setState({
+        showProjects: true
+      })
+    }, 2000);
   }
 
   renderFadeWrap(content) {
@@ -47,18 +62,20 @@ class Main extends React.Component {
   }
 
   render() {
-
     const info = (
       <div className="Main-info FadeAnim">
         <div className="Main-name">
-          Isaac Nemzer
+          isaac nemzer
+        </div>
+        <div className="Main-description">
+          software engineer, transit advocate, reptile enthusiast
         </div>
         <div className="Main-links">
-          <a className="Main-github Link" href="https://github.com/the-nemz">
-            GitHub
+          <a className="Main-github Link" target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/the-nemz">
+            github
           </a>
-          <a className="Main-linkedin Link" href="https://www.linkedin.com/in/isaacnemzer/">
-            LinkedIn
+          <a className="Main-linkedin Link" target="_blank" rel="nofollow noopener noreferrer" href="https://www.linkedin.com/in/isaacnemzer/">
+            linkedin
           </a>
         </div>
       </div>
@@ -68,13 +85,55 @@ class Main extends React.Component {
       <img className="Main-image FadeAnim" src={glasses} alt="Isaac in glasses in front of a wall of glasses" />
     );
 
-    return (
-      <div className="Main">
-        <div className="Main-left">
-          {this.state.showInfo ? this.renderFadeWrap(info) : ''}
-          {this.state.showImage ? this.renderFadeWrap(image) : ''}
+    const res = (
+      <div className="Main-res FadeAnim">
+        <div className="Main-resLine Main-resLine--job">
+          tech lead @ <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="https://yext.com">yext</a>
         </div>
-        <div className="Main-right">
+        <div className="Main-resLine Main-resLine--college">
+          computer science @ <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="https://www.jhu.edu/">johns hopkins university</a>
+        </div>
+        <div className="Main-resLine Main-resLine--highschool">
+          <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="http://www.samohi.smmusd.org/">santa monica high school</a>
+        </div>
+      </div>
+    );
+
+    const projects = (
+      <div className="Main-projects FadeAnim">
+        <div className="Main-projectsHeading">
+          projects
+        </div>
+        <div className="Main-project Main-project--metroDreamin">
+          <a className="Main-projectImgLink" href="https://metrodreamin.com">
+            <img className="Main-projectImg" src={metrodreamin} alt="Metro Dreamin'" />
+          </a>
+          <div className="Main-projectLinks">
+            <a className="Main-projectTitle Link" href="https://metrodreamin.com">
+              metro dreamin'
+            </a>
+            <a className="Main-projectSource Link" href="https://github.com/the-nemz/metro-dreamin">
+              source code
+            </a>
+          </div>
+          <div className="Main-projectDesc">
+            metro dreamin' is a react web app that allows you to design and visualize the transportation system that you wish your city had
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
+      <div className="Main Container">
+        {this.state.showInfo ? this.renderFadeWrap(info) : ''}
+        <div className="Main-content">
+          <div className="Main-col Main-col--left">
+            {this.state.showImage ? this.renderFadeWrap(image) : ''}
+          </div>
+          <div className="Main-col Main-col--right">
+            {this.state.showRes ? this.renderFadeWrap(res) : ''}
+            {this.state.showProjects ? this.renderFadeWrap(projects) : ''}
+          </div>
         </div>
       </div>
     );
