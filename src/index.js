@@ -71,10 +71,12 @@ class Main extends React.Component {
           software engineer, transit advocate, reptile enthusiast
         </div>
         <div className="Main-links">
-          <a className="Main-github Link" target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/the-nemz">
+          <a className="Main-github Link" href="https://github.com/the-nemz"
+             target="_blank" rel="nofollow noopener noreferrer">
             github
           </a>
-          <a className="Main-linkedin Link" target="_blank" rel="nofollow noopener noreferrer" href="https://www.linkedin.com/in/isaacnemzer/">
+          <a className="Main-linkedin Link" href="https://www.linkedin.com/in/isaacnemzer/"
+             target="_blank" rel="nofollow noopener noreferrer">
             linkedin
           </a>
         </div>
@@ -88,13 +90,22 @@ class Main extends React.Component {
     const res = (
       <div className="Main-res FadeAnim">
         <div className="Main-resLine Main-resLine--job">
-          tech lead @ <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="https://yext.com">yext</a>
+          tech lead @ <a className="Link" href="https://yext.com"
+                         target="_blank" rel="nofollow noopener noreferrer">
+                        yext
+                      </a>
         </div>
         <div className="Main-resLine Main-resLine--college">
-          computer science @ <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="https://www.jhu.edu/">johns hopkins university</a>
+          computer science @ <a className="Link" href="https://www.jhu.edu/"
+                                target="_blank" rel="nofollow noopener noreferrer">
+                               johns hopkins university
+                             </a>
         </div>
         <div className="Main-resLine Main-resLine--highschool">
-          <a className="Link" target="_blank" rel="nofollow noopener noreferrer" href="http://www.samohi.smmusd.org/">santa monica high school</a>
+          <a className="Link" href="http://www.samohi.smmusd.org/"
+             target="_blank" rel="nofollow noopener noreferrer">
+            santa monica high school
+          </a>
         </div>
       </div>
     );
@@ -105,14 +116,17 @@ class Main extends React.Component {
           projects
         </div>
         <div className="Main-project Main-project--metroDreamin">
-          <a className="Main-projectImgLink" href="https://metrodreamin.com">
+          <a className="Main-projectImgLink" href="https://metrodreamin.com"
+             target="_blank" rel="nofollow noopener noreferrer">
             <img className="Main-projectImg" src={metrodreamin} alt="Metro Dreamin'" />
           </a>
           <div className="Main-projectLinks">
-            <a className="Main-projectTitle Link" href="https://metrodreamin.com">
+            <a className="Main-projectTitle Link" href="https://metrodreamin.com"
+               target="_blank" rel="nofollow noopener noreferrer">
               metro dreamin'
             </a>
-            <a className="Main-projectSource Link" href="https://github.com/the-nemz/metro-dreamin">
+            <a className="Main-projectSource Link" href="https://github.com/the-nemz/metro-dreamin"
+               target="_blank"rel="nofollow noopener noreferrer">
               source code
             </a>
           </div>
