@@ -4,4 +4,53 @@
   width: 100vw;
   background-color: $gray-dark;
   color: $white;
+  display: flex;
+
+  &-left,
+  &-right
+  {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > span
+    {
+      // for animation spans
+      width: 100%;
+    }
+  }
+
+  &-info
+  {
+    text-align: center;
+  }
+
+  &-name
+  {
+    font-size: 32px;
+  }
+
+  &-links
+  {
+    margin-top: $gutter/2;
+  }
+
+  &-github
+  {
+    padding-right: $gutter;
+    border-right: $border-default;
+  }
+
+  &-linkedin
+  {
+    padding-left: $gutter;
+  }
+
+  &-image
+  {
+    width: 100%;
+    border-radius: $gutter;
+    margin-top: $gutter;
+  }
 }
